@@ -10,11 +10,33 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
-// your code here
-  
+function flatten(arr)
+{
+  let flatArr = []
+
+  arr.forEach(function (ele)
+  {
+    if (Array.isArray(ele))
+    {
+      flatArr = flatArr.concat(flatten(ele))
+    } else
+    {
+      flatArr.push(ele)
+    }
+  });
+
+  return flatArr;
+}
+
+console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
+console.log(flatten([1, 2])); // [1, 2]
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
+try
+{
   module.exports = flatten;
-} catch (e) {
+} catch (e)
+{
   module.exports = null;
 }

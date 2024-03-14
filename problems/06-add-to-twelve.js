@@ -12,11 +12,26 @@ addToTwelve([1, 12, 4, 7, 6]); // false
 addToTwelve([1]); // false
 ***********************************************************************/
 
-// your code here
+function addToTwelve(arr)
+{
+  if (arr.length === 1)
+  {
+    return false;
+  };
+  if (arr[arr.length - 1] + arr[arr.length - 2] === 12)
+  {
+    return true;
+  }
+  return addToTwelve(arr.slice(0, -1));
+}
+
+console.log(addToTwelve([1, 3, 4, 7, 5])); // true
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
+try
+{
   module.exports = addToTwelve;
-} catch (e) {
+} catch (e)
+{
   module.exports = null;
 }

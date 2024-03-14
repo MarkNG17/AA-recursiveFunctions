@@ -11,7 +11,22 @@ sumToN(9)  // returns 45
 sumToN(-8)  // returns null
 ***********************************************************************/
 
-function sumToN(num, acc = 0)
+// function sumToN(num, acc = 0)
+// {
+//   if (num < 0)
+//   {
+//     return null;
+//   }
+//   if (num === 0)
+//   {
+//       return acc;
+//   }
+//   acc += num;
+//   return sumToN(num - 1, acc);
+
+// }
+
+function sumToN(num)
 {
   if (num < 0)
   {
@@ -19,11 +34,9 @@ function sumToN(num, acc = 0)
   }
   if (num === 0)
   {
-      return acc;
+    return 0;
   }
-  acc += num;
-  return sumToN(num - 1, acc);
-
+  return num + sumToN(num - 1);
 }
 
 sumToN(5) // returns 15
